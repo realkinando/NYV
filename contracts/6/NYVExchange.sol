@@ -35,8 +35,7 @@ contract NYVExchange is Ownable {
     //magic happens here
     //FLAW : uses explicit burn from NYVAsset contract
     //IN FUTURE : WILL REPLACE burn with operatorBurn - in order to give users better consent
-    function exchange(address quote, address base, bool isBuy, uint256 amount) external{
-        require(operating);
+    function exchange(address quote, address base, bool isBuy, uint256 amount) external operational{
         require(_quoteBaseAggregator[quote][base] != address(0),"Pair not found, try switching quote/base and inverting isBuy");
         AggregatorInterface oracle = AggregatorInterface(_quoteBaseAggregator[quote][base]);
         int256 rate = oracle.latestAnswer();

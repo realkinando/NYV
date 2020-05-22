@@ -1,5 +1,7 @@
 usePlugin("@nomiclabs/buidler-waffle");
 
+const adminKey = require("./adminKey");
+
 // This is a sample Buidler task. To learn how to create your own go to
 // https://buidler.dev/guides/create-task.html
 task("accounts", "Prints the list of accounts", async () => {
@@ -17,6 +19,13 @@ task("accounts", "Prints the list of accounts", async () => {
 module.exports = {
   // This is a sample solc configuration that specifies which version of solc to use
   solc: {
-    version: "0.6.2",
+    version: "0.6.6",
   },
+  paths:{
+    sources: "./contracts/6",
+  },
+  networks: {
+    rinkeby: { url: "https://rinkeby.infura.io/v3/bc365e6e93c741e8bcc7b920134d29a3",
+  accounts:[adminKey] }
+  }
 };

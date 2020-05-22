@@ -79,17 +79,17 @@ describe("NYV Exchange", function () {
 
     describe("EUR to USD", function(){
 
-        it("Should mint the correct amount of USD",async function(){
+        it("Mints the correct amount of USD",async function(){
             await exchange.connect(addr1).exchange(nyvUSD.address,nyvEUR.address,false,exchangeAmount);
             expect(await nyvUSD.balanceOf(await addr1.getAddress())).to.equal(balancePostEURtoUSD);
         });
 
-        it("Should burn the correct amount of EUR",async function(){
+        it("Burns the correct amount of EUR",async function(){
             await exchange.connect(addr1).exchange(nyvUSD.address,nyvEUR.address,false,exchangeAmount);
             expect(await nyvEUR.balanceOf(await addr1.getAddress())).to.equal(balancePostBurn);
         });
 
-        it("Should revert when the user doesn't hold the requested exchange amount", async function(){
+        it("Reverts when the user doesn't hold the requested exchange amount", async function(){
             try{
                 await exchange.connect(addr1).exchange(nyvUSD.address,nyvEUR.address,false,exchangeShouldRevertAmount);
             }
@@ -102,17 +102,17 @@ describe("NYV Exchange", function () {
 
     describe("USD to EUR", function(){
 
-        it("Should burn the correct amount of USD",async function(){
+        it("Burns the correct amount of USD",async function(){
             await exchange.connect(addr1).exchange(nyvUSD.address,nyvEUR.address,true,exchangeAmount);
             expect(await nyvUSD.balanceOf(await addr1.getAddress())).to.equal(balancePostBurn);
         });
 
-        it("Should mint the correct amount of EUR",async  function(){
+        it("Mints the correct amount of EUR",async  function(){
             await exchange.connect(addr1).exchange(nyvUSD.address,nyvEUR.address,true,exchangeAmount);
             expect(await nyvEUR.balanceOf(await addr1.getAddress())).to.equal(balancePostUSDtoEUR);
         });
 
-        it("Should revert when the user doesn't hold the requested exchange amount", async function(){
+        it("Reverts when the user doesn't hold the requested exchange amount", async function(){
             try{
                 await exchange.connect(addr1).exchange(nyvUSD.address,nyvEUR.address,true,exchangeShouldRevertAmount);
             }
