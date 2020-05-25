@@ -1,5 +1,5 @@
 # :currency_exchange:NYV Money
-NYV (pronounced Naive) aims to serve as a platform to bootstrap liquidity for innovative, low cap, niche stablecoins. 
+NYV (pronounced Naive) aims to serve as a platform to bootstrap liquidity for innovative, low cap, niche stablecoins.  
   
 NYV does this by :
 - Incentivising liquidity with our own platform tokens of the same peg, on Uniswap V2  
@@ -7,6 +7,8 @@ NYV does this by :
   
 **The aim is to open up the stablecoin market and bring DeFi to the world!  
 BUIDLed for #HackMoney**
+
+Explainer Video : https://youtu.be/nzwH_odSW3k
 
 REALLY EARLY DAYS, I AM (@realKinando) CURRENTLY WORKING ON THIS SOLO - WOULD LOVE FEEDBACK AND FOR PEOPLE TO JOIN ME  
 
